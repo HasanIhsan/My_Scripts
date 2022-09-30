@@ -14,7 +14,7 @@ echo "Press ESC key to quit"
 printf "\033[0;32mAdd README.md FIle Message $(date):\033[0m\n" 
 
 # read a single characters
-while IFS= read -r -n1 key1
+while IFS = read -r -n1 key1
 do
 # if input == ESC key
 if [[ $key1 == $'\e' ]];
