@@ -1,2 +1,3 @@
 
-# small shell script to create a new repos
+##  shellscripts to create/Update a new repos
+ 
