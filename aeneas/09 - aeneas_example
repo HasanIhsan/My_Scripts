@@ -1,0 +1,23 @@
+from aeneas.executetask import ExecuteTask
+from aeneas.task import Task
+
+# File paths (make sure to replace with your real paths)
+audio_path = "input.wav"
+text_path = "input.txt"
+output_path = "output.json"
+
+# Config string for forced alignment with plain text and JSON output
+config_string = "task_language=eng|is_text_type=plain|os_task_file_format=json"
+
+# Create Task
+task = Task(config_string=config_string)
+task.audio_file_path_absolute = audio_path
+task.text_file_path_absolute = text_path
+task.sync_map_file_path_absolute = output_path
+
+# Run task
+ExecuteTask(task).execute()
+
+# Save result
+task.output_sync_map_file()
+print("Alignment complete. Output saved to:", output_path)
